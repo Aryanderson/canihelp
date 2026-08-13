@@ -1,0 +1,21 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_API_KEY": "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",
+    "ANTHROPIC_AUTH_TOKEN": "",
+    "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1",
+    "ANTHROPIC_MODEL": "nvidia/nemotron-3-super-120b-a12b:free"
+  },
+  "permissions": {
+    "allow": [
+      "Read(//c/Branches/**)",
+      "Bash(npm create *)",
+      "Bash(mkdir -p canihelp-frontend/src)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npx vite *)",
+      "Bash(curl -s http://localhost:5174)"
+    ]
+  }
+}
