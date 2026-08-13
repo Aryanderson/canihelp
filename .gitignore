@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Misc
+.DS_Thumbs
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
