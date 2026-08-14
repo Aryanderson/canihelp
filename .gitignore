@@ -9,3 +9,28 @@ node_modules/
 # Build outputs
 dist/
 build/
+
+# ─── Segredos / chaves ───────────────────────────────────────────────────────
+*.p8
+*.pem
+*.key
+gcp-sa-key.json
+.env
+.env.*
+# connections.toml real nunca é commitado (só o .example)
+connections.toml
+!connections.toml.example
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.uv/
+
+# ─── Sistema operacional / editores ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
