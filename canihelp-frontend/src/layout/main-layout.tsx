@@ -10,16 +10,20 @@
 // import { toast } from "sonner";
 // const EventsDialog = React.lazy(() => import("events/EventsDialog"));
 
-function MainLayout() {  
+import Layout from './layout'
+
+function MainLayout() {
   //const actualPath = useLocation();
   return (
-    <div className="flex flex-col h-full w-screen overflow-x-hidden justify-between gap-4">
-        {/* <Header menuVisible={true}/> */}
-        <main className="box-border w-full h-full pt-0 p-4 pb-0">
-          {/* <Outlet /> */}
-        </main>
-        {/* <Toaster /> */}
-        {/* {!actualPath.pathname.includes("/events") && (
+    <div className="flex min-h-screen w-full flex-col overflow-x-hidden">
+      {/* <Header menuVisible={true}/> */}
+      <main className="w-full flex-1 py-4">
+        {/* <Layout>
+          <Outlet /> 
+        </Layout>*/}
+      </main>
+      {/* <Toaster /> */}
+      {/* {!actualPath.pathname.includes("/events") && (
         //   <EventDialog
         //     onOpenChange={()=> false}
         //     isExpanded={true}
@@ -37,10 +41,10 @@ function MainLayout() {
           //     />
           //     {/* <Events/> */}
           {/* </React.Suspense> */}
-        
-        {/* <ChatApp /> */}
+      
+      {/* <ChatApp /> */}
     </div>
-  );
+  )
 }
 
 export default MainLayout;
