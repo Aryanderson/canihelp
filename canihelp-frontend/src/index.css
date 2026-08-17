@@ -543,7 +543,7 @@ body {
 
 /* Input variations */
 .input-modern {
-  @apply bg-background border border-input/30 rounded-lg px-4 py-3 text-base focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30 transition-all duration-200 placeholder:text-muted-foreground/50;
+  @apply bg-white border border-input/30 rounded-lg px-4 py-3 text-base focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30 transition-all duration-200 placeholder:text-muted-foreground/50;
 }
 
 .input-modern:focus {

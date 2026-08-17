@@ -122,7 +122,7 @@ export default function HomePage() {
                 Começar agora
                 <Search className="ml-2 h-4 w-4" />
               </Button>
-              <Button className="btn-outline px-8 py-3 text-lg">
+              <Button className="btn-primary px-8 py-3 text-lg">
                 Como funciona
                 <MessageSquare className="ml-2 h-4 w-4" />
               </Button>
