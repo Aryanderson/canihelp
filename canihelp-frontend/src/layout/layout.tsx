@@ -9,7 +9,7 @@ export function Layout({ children, className = '' }: LayoutProps) {
   return (
     <div
       className={[
-        'mx-auto w-full lg:w-[1000px]  max-w-[7xl] px-4 sm:px-6 lg:px-8',
+        'mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 xl:px-10',
         className,
       ].filter(Boolean).join(' ')}
     >

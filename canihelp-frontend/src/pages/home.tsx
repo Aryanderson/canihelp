@@ -1,4 +1,4 @@
-import { Search } from 'lucide-react'
+import { Search, UserRound, Briefcase, Phone, Check, Shield, MessageSquare } from 'lucide-react'
 import { useMemo, useState } from 'react'
 
 import { ProfileCard } from '@/components/custom/profile-card'
@@ -45,81 +45,292 @@ export default function HomePage() {
   }, [query])
 
   return (
-    <Layout className="space-y-12 pb-16">
-      {/* Carousel Section - Full width 16:9 with max height 640px */}
-      <section className="w-full">
-        <div className="relative w-full max-w-7xl mx-auto max-h-160">
-          <div className="aspect-video w-full h-full">
-            <CarouselMain className="w-full h-full" />
-          </div>
-        </div>
-      </section>
-
-      {/* Central Search Block - Increased and improved based on BigMarker */}
-      <section className="mx-auto w-full">
-        <div className="space-y-8">
-          {/* Search Section - Made more prominent */}
-          <div className="flex flex-col items-center gap-6">
-            {/* Optional: Add a heading for clarity */}
-            <h2 className="text-2xl font-bold text-foreground">
-              Encontre profissionais
-            </h2>
-
-            {/* Search Input Container - Made larger and more modern */}
-            <div className="w-full flex items-center gap-3 rounded-2xl border border-border bg-card p-2 shadow-sm">
-              {/* Left Icon Container */}
-              <div className="items-center justify-center rounded-xl bg-primary/10 text-primary p-3">
-                <Search className="h-5 w-5" />
-              </div>
-
-              {/* Input Field - Expanded to take more space */}
-              <div className="flex-1">
-                <Input
-                  aria-label="Pesquisar"
-                  value={query}
-                  onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Buscar por nome, profissão ou telefone"
-                  className="h-12 border-0 bg-transparent text-lg font-medium text-foreground focus-visible:ring-0 focus-visible:ring-offset-0"
-                />
-              </div>
-
-              {/* Search Button - Made prominent with teal color */}
-              <Button
-                type="button"
-                className="h-12 px-6 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all duration-200 flex items-center gap-2"
-              >
-                Pesquisar
-                <Search className="h-4 w-4 ml-2" />
+    <Layout className="min-h-[calc(100vh-4.5rem)] bg-background">
+      {/* Hero Section */}
+      <section className="py-16 sm:py-20">
+        <div className="container">
+          <div className="space-y-8 text-center">
+            <h1 className="text-4xl font-bold tracking-tight">
+              Conecte-se com profissionais qualificados
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Encontre os melhores especialistas para suas necessidades de forma rápida e segura
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="btn-primary px-8 py-3 text-lg">
+                Começar agora
+                <Search className="ml-2 h-4 w-4" />
+              </Button>
+              <Button className="btn-outline px-8 py-3 text-lg">
+                Como funciona
+                <MessageSquare className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cards Section - Improved spacing and styling */}
-      <section>
-        {/* Optional: Add a heading for the cards section */}
-        <h2 className="mb-6 text-2xl font-bold text-foreground">
-          Profissionais encontrados
-        </h2>
+      {/* Features Section */}
+      <section className="py-16 bg-muted/5">
+        <div className="container">
+          <div className="space-y-12">
+            <div className="text-center">
+              <h2 className="section-title">Por que escolher nossa plataforma?</h2>
+              <p className="section-subtitle">
+                Plataforma moderna e confiável para conectar você com os melhores profissionais
+              </p>
+            </div>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Feature 1 */}
+              <div className="card-modern hover-lift p-8">
+                <div className="flex items-center justify-start gap-4 mb-4">
+                  <div className="bg-primary/10 rounded-lg p-3">
+                    <Search className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Busca Inteligente</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Encontre exatamente o que você precisa com filtros avançados e sugestões personalizadas
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filteredPeople.map((person) => (
-            <ProfileCard
-              key={`${person.name}-${person.phone}`}
-              name={person.name}
-              profession={person.profession}
-              phone={person.phone}
-            />
-          ))}
-        </div>
+              {/* Feature 2 */}
+              <div className="card-modern hover-lift p-8">
+                <div className="flex items-center justify-start gap-4 mb-4">
+                  <div className="bg-primary/10 rounded-lg p-3">
+                    <UserRound className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Perfis Verificados</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Todos os profissionais passam por rigoroso processo de verificação
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-        {filteredPeople.length === 0 && (
-          <div className="mt-8 rounded-2xl border border-dashed border-border bg-muted/20 p-12 text-center text-sm text-muted-foreground">
-            Nenhum resultado encontrado para sua busca.
+              {/* Feature 3 */}
+              <div className="card-modern hover-lift p-8">
+                <div className="flex items-center justify-start gap-4 mb-4">
+                  <div className="bg-primary/10 rounded-lg p-3">
+                    <Shield className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Privacidade e Segurança</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Seus dados estão protegidos com criptografia de ponta a ponta
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        )}
+        </div>
       </section>
+
+      {/* Carousel Section - Full width 16:9 with max height 640px */}
+      <section className="py-16">
+        <div className="container">
+          <h2 className="section-title mb-8 text-center">
+            Profissionais em destaque
+          </h2>
+          <div className="relative">
+            <div className="aspect-video w-full">
+              <CarouselMain className="w-full h-full" />
+            </div>
+            {/* Navigation dots */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              {[1, 2, 3, 4, 5].map((_, i) => (
+                <button
+                  key={i}
+                  className="w-2 h-2 bg-muted/50 rounded-full transition-all duration-200 hover:bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Search Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="space-y-8 text-center">
+            <h2 className="section-title">Encontre o profissional ideal</h2>
+            <p className="section-subtitle">
+              Busque por nome, especialidade ou localização
+            </p>
+            <div className="max-w-2xl mx-auto">
+              <div className="flex flex-col gap-4">
+                <Input
+                  type="text"
+                  placeholder="Buscar por nome, profissão ou especialidade..."
+                  className="input-modern"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+                <Button className="btn-primary w-full">
+                  Pesquisar
+                  <Search className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Results Section */}
+      <section className="py-16 bg-muted/5">
+        <div className="container">
+          <div className="space-y-8">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="section-title">
+                Profissionais encontrados
+              </h2>
+              <span className="text-sm text-muted-foreground">
+                {filteredPeople.length} resultados encontrados
+              </span>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {filteredPeople.map((person) => (
+                <ProfileCard
+                  key={`${person.name}-${person.phone}`}
+                  name={person.name}
+                  profession={person.profession}
+                  phone={person.phone}
+                />
+              ))}
+
+              {filteredPeople.length === 0 && (
+                <div className="col-span-full">
+                  <div className="card-modern text-center py-12">
+                    <div className="space-y-4">
+                      <Search className="h-8 w-8 mx-auto text-muted-foreground" />
+                      <h3 className="font-semibold text-lg">Nenhum profissional encontrado</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Tente ajustar seus critérios de busca ou verificar a ortografia
+                      </p>
+                      <Button className="btn-outline mt-6">
+                        Limpar busca
+                        <Search className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="space-y-12">
+            <h2 className="section-title text-center">O que nossos usuários dizem</h2>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Testimonial 1 */}
+              <div className="card-modern hover-lift p-6">
+                <div className="space-y-4">
+                  <p className="text-muted-foreground/80 italic">
+                    "Plataforma incrível! Encontrei o profissional perfeito para meu projeto em menos de 24 horas."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
+                      <UserRound className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Maria Silva</h4>
+                      <p className="text-xs text-muted-foreground">Cliente satisfeita</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="card-modern hover-lift p-6">
+                <div className="space-y-4">
+                  <p className="text-muted-foreground/80 italic">
+                    "Finalmente encontrei um jeito simples e seguro de contratar freelancers qualificados."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
+                      <UserRound className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">João Santos</h4>
+                      <p className="text-xs text-muted-foreground">Empresário</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="card-modern hover-lift p-6">
+                <div className="space-y-4">
+                  <p className="text-muted-foreground/80 italic">
+                    "A verificação de perfis me deu total confiança para contratar profissionais através da plataforma."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
+                      <UserRound className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Ana Paula</h4>
+                      <p className="text-xs text-muted-foreground">Gestora de projetos</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary/5">
+        <div className="container">
+          <div className="text-center space-y-8">
+            <h2 className="section-text text-3xl font-bold">
+              Pronto para começar?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Junte-se a milhares de usuários que já encontraram o profissional ideal através da nossa plataforma
+            </p>
+            <Button className="btn-primary px-8 py-3 text-lg">
+              Criar conta gratuita
+              <UserRound className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-muted/10">
+        <div className="container">
+          <div className="space-y-6 text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#" className="text-muted-foreground/60 hover:text-muted-foreground transition-colors">
+                Sobre nós
+              </a>
+              <a href="#" className="text-muted-foreground/60 hover:text-muted-foreground transition-colors">
+                Termos de serviço
+              </a>
+              <a href="#" className="text-muted-foreground/60 hover:text-muted-foreground transition-colors">
+                Política de privacidade
+              </a>
+              <a href="#" className="text-muted-foreground/60 hover:text-muted-foreground transition-colors">
+                Contato
+              </a>
+            </div>
+            <p className="text-xs text-muted-foreground/50">
+              © 2026 CaniHelp. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
     </Layout>
   )
 }
