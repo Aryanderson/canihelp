@@ -15,7 +15,7 @@ export function CarouselMain({ className = "" }: { className?: string }) {
           <CarouselItem key={index}>
             <div className="p-1">
               <Card className="h-full">
-                <CardContent className="flex aspect-video items-center justify-center p-6 bg-card/50">
+                <CardContent className="flex aspect-video items-center justify-center bg-card/50">
                   <span className="text-5xl font-semibold text-muted-foreground">
                     {index + 1}
                   </span>
@@ -25,8 +25,8 @@ export function CarouselMain({ className = "" }: { className?: string }) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-2.5"/>
-      <CarouselNext className="right-2.5"/>
+      <CarouselPrevious className="left-2 sm:left-3 md:left-4 top-1/2 -translate-y-1/2" />
+      <CarouselNext className="right-2 sm:right-3 md:right-4 top-1/2 -translate-y-1/2" />
     </Carousel>
   )
 }

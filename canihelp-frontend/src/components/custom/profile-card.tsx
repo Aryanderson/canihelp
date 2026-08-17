@@ -11,10 +11,10 @@ type ProfileCardProps = {
 export function ProfileCard({ name, profession, phone }: ProfileCardProps) {
   return (
     <Card className="h-full rounded-2xl border border-primary/20 bg-card/90 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
-      <CardContent className="flex flex-col gap-5 p-6">
+      <CardContent className="flex flex-col gap-5 p-4">
         {/* Name Section */}
         <div className="flex items-center gap-4">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
             <UserRound className="h-6 w-6" />
           </div>
           <div className="flex-1">
@@ -29,7 +29,7 @@ export function ProfileCard({ name, profession, phone }: ProfileCardProps) {
 
         {/* Profession Section */}
         <div className="flex items-center gap-4">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
             <BriefcaseBusiness className="h-6 w-6" />
           </div>
           <div className="flex-1">
@@ -44,7 +44,7 @@ export function ProfileCard({ name, profession, phone }: ProfileCardProps) {
 
         {/* Phone Section */}
         <div className="flex items-center gap-4">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
             <Phone className="h-6 w-6" />
           </div>
           <div className="flex-1">

@@ -56,7 +56,7 @@ export default function HomePage() {
       </section>
 
       {/* Central Search Block - Increased and improved based on BigMarker */}
-      <section className="mx-auto w-full px-6">
+      <section className="mx-auto w-full">
         <div className="space-y-8">
           {/* Search Section - Made more prominent */}
           <div className="flex flex-col items-center gap-6">
@@ -66,9 +66,9 @@ export default function HomePage() {
             </h2>
 
             {/* Search Input Container - Made larger and more modern */}
-            <div className="w-full flex items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm">
+            <div className="w-full flex items-center gap-3 rounded-2xl border border-border bg-card p-2 shadow-sm">
               {/* Left Icon Container */}
-              <div className="shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary p-3">
+              <div className="items-center justify-center rounded-xl bg-primary/10 text-primary p-3">
                 <Search className="h-5 w-5" />
               </div>
 
