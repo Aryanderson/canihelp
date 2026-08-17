@@ -6,11 +6,18 @@ type ProfileCardProps = {
   name: string
   profession: string
   phone: string
+  imageProfile: string
 }
 
-export function ProfileCard({ name, profession, phone }: ProfileCardProps) {
+export function ProfileCard({ name, profession, phone, imageProfile }: ProfileCardProps) {
   return (
-    <Card className="card-interactive hover:-translate-y-2 hover:shadow-xl border border-primary/20">
+    <Card className="card-interactive hover:-translate-y-2 hover:shadow-xl border border-primary/20 overflow-hidden">
+      <img
+        src={imageProfile}
+        alt={`${name} profile`}
+        className="h-[200px] w-full object-cover"
+      />
+
       <CardContent className="flex flex-col gap-5 p-6">
         {/* Name Section */}
         <div className="flex items-center gap-4">

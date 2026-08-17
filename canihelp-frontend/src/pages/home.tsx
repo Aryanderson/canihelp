@@ -11,21 +11,82 @@ type Person = {
   name: string
   profession: string
   phone: string
+  imageProfile: string
 }
 
 const people: Person[] = [
-  { name: 'Ana Silva', profession: 'Médica', phone: '(11) 99999-1234' },
-  { name: 'Bruno Costa', profession: 'Engenheiro', phone: '(11) 98888-2345' },
-  { name: 'Carla Souza', profession: 'Professora', phone: '(11) 97777-3456' },
-  { name: 'Diego Lima', profession: 'Designer', phone: '(11) 96666-4567' },
-  { name: 'Elaine Rocha', profession: 'Advogada', phone: '(11) 95555-5678' },
-  { name: 'Felipe Nunes', profession: 'Analista', phone: '(11) 94444-6789' },
-  { name: 'Giovana Prado', profession: 'Psicóloga', phone: '(11) 93333-7890' },
-  { name: 'Henrique Dias', profession: 'Arquiteto', phone: '(11) 92222-8901' },
-  { name: 'Isabela Moreira', profession: 'Nutricionista', phone: '(11) 91111-9012' },
-  { name: 'João Pereira', profession: 'Consultor', phone: '(11) 90000-0123' },
-  { name: 'Karen Alves', profession: 'Veterinária', phone: '(11) 99888-1112' },
-  { name: 'Lucas Martins', profession: 'Programador', phone: '(11) 98777-2223' },
+  {
+    name: 'Ana Silva',
+    profession: 'Médica',
+    phone: '(11) 99999-1234',
+    imageProfile: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Bruno Costa',
+    profession: 'Engenheiro',
+    phone: '(11) 98888-2345',
+    imageProfile: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Carla Souza',
+    profession: 'Professora',
+    phone: '(11) 97777-3456',
+    imageProfile: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Diego Lima',
+    profession: 'Designer',
+    phone: '(11) 96666-4567',
+    imageProfile: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Elaine Rocha',
+    profession: 'Advogada',
+    phone: '(11) 95555-5678',
+    imageProfile: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Felipe Nunes',
+    profession: 'Analista',
+    phone: '(11) 94444-6789',
+    imageProfile: 'https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Giovana Prado',
+    profession: 'Psicóloga',
+    phone: '(11) 93333-7890',
+    imageProfile: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Henrique Dias',
+    profession: 'Arquiteto',
+    phone: '(11) 92222-8901',
+    imageProfile: 'https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Isabela Moreira',
+    profession: 'Nutricionista',
+    phone: '(11) 91111-9012',
+    imageProfile: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'João Pereira',
+    profession: 'Consultor',
+    phone: '(11) 90000-0123',
+    imageProfile: 'https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Karen Alves',
+    profession: 'Veterinária',
+    phone: '(11) 99888-1112',
+    imageProfile: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Lucas Martins',
+    profession: 'Programador',
+    phone: '(11) 98777-2223',
+    imageProfile: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80',
+  },
 ]
 
 export default function HomePage() {
@@ -200,6 +261,7 @@ export default function HomePage() {
                   name={person.name}
                   profession={person.profession}
                   phone={person.phone}
+                  imageProfile={person.imageProfile}
                 />
               ))}
 
