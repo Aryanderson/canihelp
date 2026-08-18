@@ -509,7 +509,7 @@ body {
 
 /* Button variations */
 .btn-primary {
-  @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 active:scale-[0.98];
+  @apply bg-[#1392a5] text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 active:scale-[0.98];
 }
 
 .btn-secondary {

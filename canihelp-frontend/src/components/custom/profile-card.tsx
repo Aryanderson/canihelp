@@ -21,7 +21,7 @@ export function ProfileCard({ name, profession, phone, imageProfile }: ProfileCa
       <CardContent className="flex flex-col gap-5 p-6">
         {/* Name Section */}
         <div className="flex items-center gap-4">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#a8dae2] text-[#1392a5]">
             <UserRound className="h-6 w-6" />
           </div>
           <div className="flex-1">
@@ -36,7 +36,7 @@ export function ProfileCard({ name, profession, phone, imageProfile }: ProfileCa
 
         {/* Profession Section */}
         <div className="flex items-center gap-4">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#a8dae2] text-[#1392a5]">
             <Briefcase className="h-6 w-6" />
           </div>
           <div className="flex-1">
@@ -51,7 +51,7 @@ export function ProfileCard({ name, profession, phone, imageProfile }: ProfileCa
 
         {/* Phone Section */}
         <div className="flex items-center gap-4">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#a8dae2] text-[#1392a5]">
             <Phone className="h-6 w-6" />
           </div>
           <div className="flex-1">

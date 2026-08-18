@@ -111,8 +111,8 @@ export default function HomePage() {
       <section className="py-8 sm:py-8">
         <div className="container">
           <div className="space-y-8 text-center">
-            <img src="src/assets/logo.png" alt="Can I Help Logo" className="mb-1 mx-auto" />
-            <h1 className="text-6xl font-bold tracking-tight text-[#1392a5]">
+            <img src="src/assets/logo.png" alt="Can I Help Logo" className="sm:w-3/12 md:w-3/12 lg:w-2/12 xl:w-2/12 mb-1 mx-auto" />
+            <h1 className="text-5xl font-bold tracking-tight text-[#1392a5]">
               Can I help?
             </h1>
             <h2 className="text-2xl font-bold tracking-tight">
@@ -149,8 +149,8 @@ export default function HomePage() {
               {/* Feature 1 */}
               <div className="card-modern hover-lift p-8">
                 <div className="flex items-center justify-start gap-4 mb-4">
-                  <div className="bg-primary/10 rounded-lg p-3">
-                    <Search className="h-5 w-5 text-primary" />
+                  <div className="bg-[#1392a5] rounded-lg p-3">
+                    <Search className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Busca Inteligente</h3>
@@ -164,8 +164,8 @@ export default function HomePage() {
               {/* Feature 2 */}
               <div className="card-modern hover-lift p-8">
                 <div className="flex items-center justify-start gap-4 mb-4">
-                  <div className="bg-primary/10 rounded-lg p-3">
-                    <UserRound className="h-5 w-5 text-primary" />
+                  <div className="bg-[#1392a5] rounded-lg p-3">
+                    <UserRound className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Perfis Verificados</h3>
@@ -179,8 +179,8 @@ export default function HomePage() {
               {/* Feature 3 */}
               <div className="card-modern hover-lift p-8">
                 <div className="flex items-center justify-start gap-4 mb-4">
-                  <div className="bg-primary/10 rounded-lg p-3">
-                    <Shield className="h-5 w-5 text-primary" />
+                  <div className="bg-[#1392a5] rounded-lg p-3">
+                    <Shield className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Privacidade e Segurança</h3>
@@ -308,8 +308,8 @@ export default function HomePage() {
                     "Plataforma incrível! Encontrei o profissional perfeito para meu projeto em menos de 24 horas."
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                      <UserRound className="h-4 w-4 text-primary" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#a8dae2]">
+                      <UserRound className="h-4 w-4 text-[#1392a5]" />
                     </div>
                     <div>
                       <h4 className="font-semibold">Maria Silva</h4>
@@ -326,8 +326,8 @@ export default function HomePage() {
                     "Finalmente encontrei um jeito simples e seguro de contratar freelancers qualificados."
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                      <UserRound className="h-4 w-4 text-primary" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#a8dae2]">
+                      <UserRound className="h-4 w-4 text-[#1392a5]" />
                     </div>
                     <div>
                       <h4 className="font-semibold">João Santos</h4>
@@ -344,8 +344,8 @@ export default function HomePage() {
                     "A verificação de perfis me deu total confiança para contratar profissionais através da plataforma."
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                      <UserRound className="h-4 w-4 text-primary" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#a8dae2]">
+                      <UserRound className="h-4 w-4 text-[#1392a5]" />
                     </div>
                     <div>
                       <h4 className="font-semibold">Ana Paula</h4>
@@ -360,14 +360,17 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="contato py-20 bg-primary/5">
+      <section className="contato py-20 bg-[#a8dae2]">
         <div className="container">
           <div className="text-center space-y-8">
             <h2 className="section-text text-3xl font-bold">
               Interessado em participar?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-0">
               Junte-se a nossa plataforma e deixe seu perfil disponível para contato!
+            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Basta clicar no botão abaixo para entrar em contato conosco e criar sua conta gratuita. Estamos ansiosos para tê-lo(a) conosco!
             </p>
             <Button className="btn-primary px-8 py-3 text-lg">
               Criar conta gratuita
