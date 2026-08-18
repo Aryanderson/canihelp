@@ -108,12 +108,16 @@ export default function HomePage() {
   return (
     <Layout className="min-h-[calc(100vh-4.5rem)] bg-background">
       {/* Hero Section */}
-      <section className="py-16 sm:py-20">
+      <section className="py-8 sm:py-8">
         <div className="container">
           <div className="space-y-8 text-center">
-            <h1 className="text-4xl font-bold tracking-tight">
-              Conecte-se com profissionais qualificados
+            <img src="src/assets/logo.png" alt="Can I Help Logo" className="mb-1 mx-auto" />
+            <h1 className="text-6xl font-bold tracking-tight text-[#1392a5]">
+              Can I help?
             </h1>
+            <h2 className="text-2xl font-bold tracking-tight">
+              Conectando profissionais e pessoas!
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Uma página dedicada a encontrar profissionais confiáveis e qualificados para qualquer serviço que você precise.
             </p>
@@ -166,7 +170,7 @@ export default function HomePage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Perfis Verificados</h3>
                     <p className="text-sm text-muted-foreground">
-                      Todos os profissionais passam por rigoroso processo de verificação
+                      Todos os profissionais fazem parte de nossa comunidade e são de total confiança.
                     </p>
                   </div>
                 </div>
@@ -181,7 +185,7 @@ export default function HomePage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Privacidade e Segurança</h3>
                     <p className="text-sm text-muted-foreground">
-                      Seus dados estão protegidos com criptografia de ponta a ponta
+                      Seus dados estão protegidos e você pode se comunicar com os profissionais de forma segura e confiável.
                     </p>
                   </div>
                 </div>
@@ -219,7 +223,7 @@ export default function HomePage() {
       </section>
 
       {/* Search Section */}
-      <section className="py-16">
+      <section className="busca py-16">
         <div className="container">
           <div className="space-y-8 text-center">
             <h2 className="section-title">Encontre o profissional ideal</h2>
@@ -356,7 +360,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary/5">
+      <section className="contato py-20 bg-primary/5">
         <div className="container">
           <div className="text-center space-y-8">
             <h2 className="section-text text-3xl font-bold">
