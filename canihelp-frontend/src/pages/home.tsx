@@ -115,7 +115,7 @@ export default function HomePage() {
               Conecte-se com profissionais qualificados
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Encontre os melhores especialistas para suas necessidades de forma rápida e segura
+              Uma página dedicada a encontrar profissionais confiáveis e qualificados para qualquer serviço que você precise.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="btn-primary px-8 py-3 text-lg">
@@ -194,9 +194,13 @@ export default function HomePage() {
       {/* Carousel Section - Full width 16:9 with max height 640px */}
       <section className="py-16">
         <div className="container">
-          <h2 className="section-title mb-8 text-center">
-            Profissionais em destaque
+          <h2 className="section-title mb-4 text-center">
+            Faça uma doação e ajude quem precisa de você.
           </h2>
+          <p className="text-center justify-center mx-auto text-lg text-muted-foreground mb-4 w-5/12">
+            Portanto, sempre que pudermos, devemos fazer o bem a todos, especialmente aos que fazem parte da nossa família na fé. 
+            <i className='text-wrap'>    Gálatas 6:10</i>
+          </p>
           <div className="relative">
             <div className="aspect-video w-full">
               <CarouselMain className="w-full h-full" />
@@ -356,10 +360,10 @@ export default function HomePage() {
         <div className="container">
           <div className="text-center space-y-8">
             <h2 className="section-text text-3xl font-bold">
-              Pronto para começar?
+              Interessado em participar?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Junte-se a milhares de usuários que já encontraram o profissional ideal através da nossa plataforma
+              Junte-se a nossa plataforma e deixe seu perfil disponível para contato!
             </p>
             <Button className="btn-primary px-8 py-3 text-lg">
               Criar conta gratuita
