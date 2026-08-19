@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap'); */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -62,9 +62,9 @@ body {
   color: #475569;
 }
 
-.logo-home {
+/* .logo-home {
   font-family: 'Nunito', sans-serif;
-}
+} */
 
 .card {
   background: rgba(255, 255, 255, 0.9);
