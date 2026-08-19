@@ -111,9 +111,9 @@ export default function HomePage() {
       <section className="py-8 sm:py-8">
         <div className="container">
           <div className="space-y-8 text-center">
-            <img src="src/assets/iHelpLogo.png" alt="Can I Help Logo" className="sm:w-3/12 md:w-3/12 lg:w-2/12 xl:w-2/12 mb-1 mx-auto" />
-            <h1 className="logo-home text-5xl font-bold tracking-tight text-[#1392a5]">
-              iHelp
+            <img src="src/assets/logo.png" alt="Can I Help Logo" className="sm:w-3/12 md:w-3/12 lg:w-2/12 xl:w-2/12 mb-1 mx-auto" />
+            <h1 className="logo-home text-5xl font-bold tracking-tight text-[#2ebdb6]">
+              <span className="text-[#1392a5]">i</span>Help
             </h1>
             <h2 className="text-2xl font-bold tracking-tight">
               Conectando profissionais e pessoas!
