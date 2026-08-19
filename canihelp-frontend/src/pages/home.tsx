@@ -119,8 +119,10 @@ export default function HomePage() {
       <section className="py-8 sm:py-8">
         <div className="container">
           <div className="space-y-8 text-center">
-            <img src="/logo.png" alt="iHelp" className="sm:w-3/12 md:w-3/12 lg:w-2/12 xl:w-2/12 mb-1 mx-auto" />
-            <h1 className="logo-home text-5xl font-bold tracking-tight text-[#2ebdb6]">
+            <div className="flex justify-center items-center gap-2 w-4/12 md:w-4/12 sm:w-4/12 lg:w-2/12 xl:w-2/12 mx-auto mb-0">
+              <img src="/logo.png" alt="iHelp" className="w-full mb-0 mx-auto" />
+            </div>
+            <h1 className="logo-home text-5xl font-bold tracking-tight text-[#2ebdb6] mt-0">
               <span className="text-[#1392a5]">i</span>Help
             </h1>
             <h2 className="text-2xl font-bold tracking-tight">
