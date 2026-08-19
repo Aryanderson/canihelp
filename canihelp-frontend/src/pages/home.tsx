@@ -111,9 +111,9 @@ export default function HomePage() {
       <section className="py-8 sm:py-8">
         <div className="container">
           <div className="space-y-8 text-center">
-            <img src="src/assets/logo.png" alt="Can I Help Logo" className="sm:w-3/12 md:w-3/12 lg:w-2/12 xl:w-2/12 mb-1 mx-auto" />
-            <h1 className="text-5xl font-bold tracking-tight text-[#1392a5]">
-              Can I help?
+            <img src="src/assets/iHelpLogo.png" alt="Can I Help Logo" className="sm:w-3/12 md:w-3/12 lg:w-2/12 xl:w-2/12 mb-1 mx-auto" />
+            <h1 className="logo-home text-5xl font-bold tracking-tight text-[#1392a5]">
+              iHelp
             </h1>
             <h2 className="text-2xl font-bold tracking-tight">
               Conectando profissionais e pessoas!
@@ -196,14 +196,16 @@ export default function HomePage() {
       </section>
 
       {/* Carousel Section - Full width 16:9 with max height 640px */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container">
           <h2 className="section-title mb-4 text-center">
             Faça uma doação e ajude quem precisa de você.
           </h2>
-          <p className="text-center justify-center mx-auto text-lg text-muted-foreground mb-4 w-5/12">
-            Portanto, sempre que pudermos, devemos fazer o bem a todos, especialmente aos que fazem parte da nossa família na fé. 
-            <i className='text-wrap'>    Gálatas 6:10</i>
+          <p className="text-center justify-center mx-auto text-lg text-muted-foreground mb-4 w-6/12">
+            "Portanto, sempre que pudermos, devemos fazer o bem a todos, especialmente aos que fazem parte da nossa família na fé." 
+          </p>
+          <p className='text-wrap text-center justify-center mx-auto text-muted-foreground mb-4 w-5/12'>
+            <i className='text-wrap text-center justify-center mx-auto '>Gálatas 6:10</i>
           </p>
           <div className="relative">
             <div className="aspect-video w-full">
@@ -223,7 +225,7 @@ export default function HomePage() {
       </section>
 
       {/* Search Section */}
-      <section className="busca py-16">
+      <section className="busca py-8">
         <div className="container">
           <div className="space-y-8 text-center">
             <h2 className="section-title">Encontre o profissional ideal</h2>
@@ -250,7 +252,7 @@ export default function HomePage() {
       </section>
 
       {/* Results Section */}
-      <section className="py-16 bg-muted/5">
+      <section className="py-8 bg-muted/5">
         <div className="container">
           <div className="space-y-8">
             <div className="flex justify-between items-center mb-6">
@@ -360,7 +362,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="contato py-20 bg-[#a8dae2]">
+      <section className="contato py-12 bg-[#a8dae2]">
         <div className="container">
           <div className="text-center space-y-8">
             <h2 className="section-text text-3xl font-bold">
@@ -381,7 +383,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-muted/10">
+      <footer className="py-8 bg-muted/10">
         <div className="container">
           <div className="space-y-6 text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
