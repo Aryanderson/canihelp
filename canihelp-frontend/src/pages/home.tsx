@@ -92,6 +92,14 @@ const people: Person[] = [
 export default function HomePage() {
   const [query, setQuery] = useState('')
 
+  const openWhatsApp = () => {
+    const phoneNumber = '5581997659684' // Replace with the desired phone number
+    const message = encodeURIComponent('Olá, gostaria de saber mais sobre o cadastro no iHelp.') // Replace with the desired message
+    const url = `https://wa.me/${phoneNumber}?text=${message}`
+    window.open(url, '_blank')
+  }
+  
+
   const filteredPeople = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase()
 
@@ -122,14 +130,18 @@ export default function HomePage() {
               Uma página dedicada a encontrar profissionais confiáveis e qualificados para qualquer serviço que você precise.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="btn-primary px-8 py-3 text-lg">
-                Começar agora
-                <Search className="ml-2 h-4 w-4" />
-              </Button>
-              <Button className="btn-primary px-8 py-3 text-lg">
-                Como funciona
-                <MessageSquare className="ml-2 h-4 w-4" />
-              </Button>
+              <a href="#busca">
+                <Button className="btn-primary px-8 py-3 text-lg">
+                  Começar agora
+                  <Search className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+              <a href="#contato">
+                <Button className="btn-primary px-8 py-3 text-lg">
+                  Como funciona
+                  <MessageSquare className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -225,9 +237,9 @@ export default function HomePage() {
       </section>
 
       {/* Search Section */}
-      <section className="busca py-8">
+      <section id="busca" className="busca py-8">
         <div className="container">
-          <div className="space-y-8 text-center">
+          <div className="mb-2 text-center">
             <h2 className="section-title">Encontre o profissional ideal</h2>
             <p className="section-subtitle">
               Busque por nome, especialidade ou localização
@@ -362,7 +374,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="contato py-12 bg-[#a8dae2]">
+      <section id="contato" className="contato py-12 bg-[#a8dae2]">
         <div className="container">
           <div className="text-center space-y-8">
             <h2 className="section-text text-3xl font-bold">
@@ -374,7 +386,7 @@ export default function HomePage() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Basta clicar no botão abaixo para entrar em contato conosco e criar sua conta gratuita. Estamos ansiosos para tê-lo(a) conosco!
             </p>
-            <Button className="btn-primary px-8 py-3 text-lg">
+            <Button className="btn-primary px-8 py-3 text-lg" onClick={openWhatsApp}>
               Criar conta gratuita
               <UserRound className="ml-2 h-4 w-4" />
             </Button>
@@ -401,7 +413,7 @@ export default function HomePage() {
               </a>
             </div>
             <p className="text-xs text-muted-foreground/50">
-              © 2026 CaniHelp. Todos os direitos reservados.
+              © 2026 iHelp. Todos os direitos reservados.
             </p>
           </div>
         </div>
