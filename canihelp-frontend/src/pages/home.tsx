@@ -1,5 +1,5 @@
 import { Search, UserRound, Briefcase, Phone, Check, Shield, MessageSquare } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 
 import { ProfileCard } from '@/components/custom/profile-card'
 import { Button } from '@/components/ui/button'
@@ -91,6 +91,10 @@ const people: Person[] = [
 
 export default function HomePage() {
   const [query, setQuery] = useState('')
+  const [selectedProfession, setSelectedProfession] = useState('')
+
+  // Get unique professions from people array
+  const uniqueProfessions = [...new Set(people.map(person => person.profession))]
 
   const openWhatsApp = () => {
     const phoneNumber = '5581997659684' // Replace with the desired phone number
@@ -103,15 +107,30 @@ export default function HomePage() {
   const filteredPeople = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase()
 
-    if (!normalizedQuery) return people
-
-    return people.filter(
-      (person) =>
+    return people.filter((person) => {
+      // Text search filter
+      const matchesQuery =
+        !normalizedQuery ||
         person.name.toLowerCase().includes(normalizedQuery) ||
         person.profession.toLowerCase().includes(normalizedQuery) ||
-        person.phone.toLowerCase().includes(normalizedQuery),
-    )
-  }, [query])
+        person.phone.toLowerCase().includes(normalizedQuery)
+
+      // Profession filter
+      const matchesProfession =
+        !selectedProfession || person.profession === selectedProfession
+
+      return matchesQuery && matchesProfession
+    })
+  }, [query, selectedProfession])
+
+  const [currentPage, setCurrentPage] = useState(1)
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [query, selectedProfession])
+
+  const itemsPerPage = 4
+  const totalPages = Math.ceil(filteredPeople.length / itemsPerPage)
+  const paginatedItems = filteredPeople.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
   return (
     <Layout className="min-h-[calc(100vh-4.5rem)] bg-background">
@@ -119,7 +138,7 @@ export default function HomePage() {
       <section className="py-8 sm:py-8">
         <div className="container">
           <div className="space-y-8 text-center">
-            <div className="flex justify-center items-center gap-2 w-4/12 md:w-4/12 sm:w-4/12 lg:w-2/12 xl:w-2/12 mx-auto mb-0">
+            <div className="flex justify-center items-center gap-2 w-5/12 md:w-4/12 sm:w-4/12 lg:w-2/12 xl:w-2/12 mx-auto mb-0">
               <img src="/logo.png" alt="iHelp" className="w-full mb-0 mx-auto" />
             </div>
             <h1 className="logo-home text-5xl font-bold tracking-tight text-[#2ebdb6] mt-0">
@@ -230,7 +249,7 @@ export default function HomePage() {
               {[1, 2, 3, 4, 5].map((_, i) => (
                 <button
                   key={i}
-                  className="w-2 h-2 bg-muted/50 rounded-full transition-all duration-200 hover:bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                  className="w-2 h-2 bg-muted/50 rounded-full transition-all duration-200 hover:bg-[#1392a5] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
                 />
               ))}
             </div>
@@ -244,7 +263,7 @@ export default function HomePage() {
           <div className="mb-2 text-center">
             <h2 className="section-title">Encontre o profissional ideal</h2>
             <p className="section-subtitle">
-              Busque por nome, especialidade ou localização
+              Busque por nome ou especialidade
             </p>
             <div className="max-w-2xl mx-auto">
               <div className="flex flex-col gap-4">
@@ -255,6 +274,18 @@ export default function HomePage() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                 />
+                <select
+                  value={selectedProfession}
+                  onChange={(e) => setSelectedProfession(e.target.value)}
+                  className="input-modern"
+                >
+                  <option value="">Todas as especialidades</option>
+                  {uniqueProfessions.map((profession) => (
+                    <option key={profession} value={profession}>
+                      {profession}
+                    </option>
+                  ))}
+                </select>
                 <Button className="btn-primary w-full">
                   Pesquisar
                   <Search className="ml-2 h-4 w-4" />
@@ -278,35 +309,69 @@ export default function HomePage() {
               </span>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {filteredPeople.map((person) => (
-                <ProfileCard
-                  key={`${person.name}-${person.phone}`}
-                  name={person.name}
-                  profession={person.profession}
-                  phone={person.phone}
-                  imageProfile={person.imageProfile}
-                />
-              ))}
-
-              {filteredPeople.length === 0 && (
-                <div className="col-span-full">
-                  <div className="card-modern text-center py-12">
-                    <div className="space-y-4">
-                      <Search className="h-8 w-8 mx-auto text-muted-foreground" />
-                      <h3 className="font-semibold text-lg">Nenhum profissional encontrado</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Tente ajustar seus critérios de busca ou verificar a ortografia
-                      </p>
-                      <Button className="btn-outline mt-6">
-                        Limpar busca
-                        <Search className="ml-2 h-4 w-4" />
-                      </Button>
-                    </div>
+            {filteredPeople.length === 0 ? (
+              <div className="col-span-full">
+                <div className="card-modern text-center py-12">
+                  <div className="space-y-4">
+                    <Search className="h-8 w-8 mx-auto text-muted-foreground" />
+                    <h3 className="font-semibold text-lg">Nenhum profissional encontrado</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Tente ajustar seus critérios de busca ou verificar a ortografia
+                    </p>
+                    <Button className="btn-outline mt-6">
+                      Limpar busca
+                      <Search className="ml-2 h-4 w-4" />
+                    </Button>
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            ) : (
+              <>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {paginatedItems.map((person) => (
+                    <ProfileCard
+                      key={`${person.name}-${person.phone}`}
+                      name={person.name}
+                      profession={person.profession}
+                      phone={person.phone}
+                      imageProfile={person.imageProfile}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-center mt-4 text-white">
+                  <div className="inline-flex items-center space-x-1">
+                    {currentPage > 1 && (
+                      <Button
+                        className="bg-[#1392a5] text-white"
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                      >
+                        Anterior
+                      </Button>
+                    )}
+                    {Array.from({ length: totalPages }).map((_, idx) => {
+                      const pageNumber = idx + 1;
+                      return (
+                        <Button
+                          key={pageNumber}
+                          className={currentPage === pageNumber ? 'bg-[#1392a5] text-white' : 'bg-[#a8dae2] text-[#1392a5]'}
+                          onClick={() => setCurrentPage(pageNumber)}
+                        >
+                          {pageNumber}
+                        </Button>
+                      );
+                    })}
+                    {currentPage < totalPages && (
+                      <Button
+                        className="bg-[#1392a5] text-white"
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                      >
+                        Próxima
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
