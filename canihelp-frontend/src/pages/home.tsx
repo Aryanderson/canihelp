@@ -153,7 +153,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#busca">
                 <Button className="btn-primary px-8 py-3 text-lg">
-                  Começar agora
+                  Buscar profissionais
                   <Search className="ml-2 h-4 w-4" />
                 </Button>
               </a>
@@ -377,12 +377,12 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="container">
           <div className="space-y-12">
             <h2 className="section-title text-center">O que nossos usuários dizem</h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {/* Testimonial 1 */}
+              {/* Testimonial 1 }
               <div className="card-modern hover-lift p-6">
                 <div className="space-y-4">
                   <p className="text-muted-foreground/80 italic">
@@ -400,7 +400,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Testimonial 2 */}
+              {/* Testimonial 2 }
               <div className="card-modern hover-lift p-6">
                 <div className="space-y-4">
                   <p className="text-muted-foreground/80 italic">
@@ -418,7 +418,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Testimonial 3 */}
+              {/* Testimonial 3 }
               <div className="card-modern hover-lift p-6">
                 <div className="space-y-4">
                   <p className="text-muted-foreground/80 italic">
@@ -438,7 +438,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section id="contato" className="contato py-12 bg-[#a8dae2]">
