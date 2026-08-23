@@ -1,4 +1,4 @@
-import { Search, UserRound, Briefcase, Phone, Check, Shield, MessageSquare } from 'lucide-react'
+import { Search, UserRound, Shield, MessageSquare } from 'lucide-react'
 import { useMemo, useState, useEffect } from 'react'
 
 import { ProfileCard } from '@/components/custom/profile-card'
@@ -96,9 +96,10 @@ export default function HomePage() {
   // Get unique professions from people array
   const uniqueProfessions = [...new Set(people.map(person => person.profession))]
 
-  const openWhatsApp = () => {
-    const phoneNumber = '5581997659684' // Replace with the desired phone number
-    const message = encodeURIComponent('Olá, gostaria de saber mais sobre o cadastro no iHelp.') // Replace with the desired message
+  const openWhatsApp = (number: string, contact: boolean) => {
+    const phoneNumber = number // Replace with the desired phone number
+    const contactIhelp = 'Olá, gostaria de saber mais sobre o cadastro no iHelp.'
+    const message = encodeURIComponent(contact ? contactIhelp : '') // Replace with the desired message
     const url = `https://wa.me/${phoneNumber}?text=${message}`
     window.open(url, '_blank')
   }
@@ -304,9 +305,9 @@ export default function HomePage() {
               <h2 className="section-title">
                 Profissionais encontrados
               </h2>
-              <span className="text-sm text-muted-foreground">
+              {/* <span className="text-sm text-muted-foreground">
                 {filteredPeople.length} resultados encontrados
-              </span>
+              </span> */}
             </div>
 
             {filteredPeople.length === 0 ? (
@@ -335,6 +336,7 @@ export default function HomePage() {
                       profession={person.profession}
                       phone={person.phone}
                       imageProfile={person.imageProfile}
+                      onClick={() => openWhatsApp(person.phone, false)}
                     />
                   ))}
                 </div>
@@ -453,7 +455,7 @@ export default function HomePage() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Basta clicar no botão abaixo para entrar em contato conosco e criar sua conta gratuita. Estamos ansiosos para tê-lo(a) conosco!
             </p>
-            <Button className="btn-primary px-8 py-3 text-lg" onClick={openWhatsApp}>
+            <Button className="btn-primary px-8 py-3 text-lg" onClick={() => openWhatsApp('5581997659684', true)}>
               Criar conta gratuita
               <UserRound className="ml-2 h-4 w-4" />
             </Button>

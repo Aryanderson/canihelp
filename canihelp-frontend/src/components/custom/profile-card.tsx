@@ -7,11 +7,12 @@ type ProfileCardProps = {
   profession: string
   phone: string
   imageProfile: string
+  onClick?: () => void
 }
 
-export function ProfileCard({ name, profession, phone, imageProfile }: ProfileCardProps) {
+export function ProfileCard({ name, profession, phone, imageProfile, onClick }: ProfileCardProps) {
   return (
-    <Card className="card-interactive hover:-translate-y-2 hover:shadow-xl border border-primary/20 overflow-hidden">
+    <Card className="card-interactive hover:-translate-y-2 hover:shadow-xl border border-primary/20 overflow-hidden" onClick={onClick}>
       <img
         src={imageProfile}
         alt={`${name} profile`}
