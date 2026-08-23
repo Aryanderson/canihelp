@@ -671,6 +671,16 @@ body {
   @apply bg-gradient-to-r from-muted/20 via-muted/30 to-muted/20 bg-[length:200%_100%];
   animation: skeleton 1.5s ease-in-out infinite;
 }
+@media (min-width: 1024px) {
+  [data-slot="carousel-previous"] {
+    margin: 0;
+  }
+
+  /* Botão Próximo */
+  [data-slot="carousel-next"] {
+    margin: 0;
+  }
+}
 
 @keyframes skeleton {
   0% {

@@ -245,15 +245,6 @@ export default function HomePage() {
             <div className="aspect-video w-full">
               <CarouselMain className="w-full h-full" />
             </div>
-            {/* Navigation dots */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {[1, 2, 3, 4, 5].map((_, i) => (
-                <button
-                  key={i}
-                  className="w-2 h-2 bg-muted/50 rounded-full transition-all duration-200 hover:bg-[#1392a5] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
